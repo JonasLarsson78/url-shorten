@@ -31,6 +31,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		mux := chi.NewRouter()
 		mux.Use(chimiddleware.Logger)
 
+		routes.RegisterRoot(mux)
 		routes.RegisterRedirect(mux)
 
 		mux.Group(func(mux chi.Router) {

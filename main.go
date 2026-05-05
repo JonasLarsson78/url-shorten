@@ -25,6 +25,7 @@ func main() {
 	r := chi.NewRouter()
 	r.Use(chimiddleware.Logger)
 
+	routes.RegisterRoot(r)
 	routes.RegisterRedirect(r)
 
 	r.Group(func(r chi.Router) {
